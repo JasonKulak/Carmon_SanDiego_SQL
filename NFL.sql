@@ -15,21 +15,19 @@ SELECT head_coach, name FROM teams WHERE conference = 'NFC' AND division = 'Nort
 SELECT head_coach, name FROM teams WHERE conference = 'AFC' AND division = 'East';
 
 -- 6. The 50 players with the highest salaries
-
---NOT CORRECT.  FIX BEFORE COMMITTING HOMEWORK##################
-?????????????SELECT salary, name FROM players LIMIT 50;?????????????
+SELECT name, salary FROM players ORDER BY salary DESC limit 50;
 
 -- 7. The average salary of all NFL players
 SELECT AVG(salary) FROM players;
 
 -- 8. The names and positions of players with a salary above 10_000_000
-
+SELECT name, position FROM players WHERE salary >= 10000000
 
 -- 9. The player with the highest salary in the NFL
-
+SELECT name, salary FROM players ORDER BY salary DESC limit 1;
 
 -- 10. The name and position of the first 100 players with the lowest salaries
-
+SELECT name, position FROM players ORDER BY salary ASC limit 100;
 
 -- 11. The average salary for a DE in the nfl
 SELECT AVG(salary) FROM players WHERE position = 'DE';
@@ -41,3 +39,5 @@ SELECT * FROM players WHERE team_id = 1;
 SELECT SUM(salary) FROM players WHERE team_id = 18;
 
 -- 14. The player with the lowest salary on the Green Bay Packers
+SELECT name, salary FROM players WHERE team_id = 23;
+--^^^NOT DONE ^^^
